@@ -1,0 +1,6 @@
+framework module Pods_shelf {
+  umbrella header "Pods-shelf-umbrella.h"
+
+  export *
+  module * { export * }
+}

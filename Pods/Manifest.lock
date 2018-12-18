@@ -1,0 +1,16 @@
+PODS:
+  - Unbox (2.5.0)
+
+DEPENDENCIES:
+  - Unbox
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Unbox
+
+SPEC CHECKSUMS:
+  Unbox: 30e437e6151a6de16139375fd4e8dd9a664cfbf7
+
+PODFILE CHECKSUM: dc06e235a20bb2a7c73979fe5e49557d67ac35e2
+
+COCOAPODS: 1.5.2
