@@ -11,6 +11,7 @@
 		4959078DAEACA78906848615 /* Pods_shelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0805038CEBA97D9BB6B387 /* Pods_shelf.framework */; };
 		8111A34E21BF6A270003F870 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8111A34D21BF6A270003F870 /* CollectionViewCell.swift */; };
 		81CB577521C89D4D00701F9B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB577421C89D4D00701F9B /* SettingsViewController.swift */; };
+		81DA835C21C8B24F00E4C080 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA835B21C8B24F00E4C080 /* BookDetailViewController.swift */; };
 		81EA8CA121A391880035E9FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA8CA021A391880035E9FA /* AppDelegate.swift */; };
 		81EA8CA321A391880035E9FA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA8CA221A391880035E9FA /* FirstViewController.swift */; };
 		81EA8CA521A391880035E9FA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA8CA421A391880035E9FA /* SecondViewController.swift */; };
@@ -56,6 +57,7 @@
 		7A018B0B993E998941FC2372 /* Pods_shelfTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shelfTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8111A34D21BF6A270003F870 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		81CB577421C89D4D00701F9B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		81DA835B21C8B24F00E4C080 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		81EA8C9D21A391870035E9FA /* shelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EA8CA021A391880035E9FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EA8CA221A391880035E9FA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				81EA8CD721A3AE6B0035E9FA /* Resources */,
 				81EA8CAB21A391890035E9FA /* LaunchScreen.storyboard */,
 				81EA8CAE21A391890035E9FA /* Info.plist */,
+				81DA835B21C8B24F00E4C080 /* BookDetailViewController.swift */,
 			);
 			path = shelf;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				81EA8CA521A391880035E9FA /* SecondViewController.swift in Sources */,
 				8111A34E21BF6A270003F870 /* CollectionViewCell.swift in Sources */,
 				81EA8CA121A391880035E9FA /* AppDelegate.swift in Sources */,
+				81DA835C21C8B24F00E4C080 /* BookDetailViewController.swift in Sources */,
 				81EA8CA321A391880035E9FA /* FirstViewController.swift in Sources */,
 				81EA8D2621A482810035E9FA /* QRScannerController.swift in Sources */,
 				81CB577521C89D4D00701F9B /* SettingsViewController.swift in Sources */,

@@ -14,24 +14,33 @@ import Unbox
 
 class APIWrapper{
     
-    
-    init(){
-        //TODO: Implement
-    }
+    init(){}
     
     func bookWithISBN(isbn: String){
-        apiRequest(isbn: isbn) { (d_book) in
-            self.saveToCore(bookToSave: d_book, isbn: isbn)
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        //We need to create a context from this container
+        let managedContext = appDelegate!.persistentContainer.viewContext
+        
+        //Prepare the request of type NSFetchRequest  for the entity
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Book")
+        fetchRequest.predicate = NSPredicate(format: "isbn == %@", isbn)
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            if (result.count < 1){
+                apiRequest(isbn: isbn) { (d_book) in
+                    self.saveToCore(bookToSave: d_book, isbn: isbn)
+                }
+            }
+        } catch {
+            print("Failed")
         }
     }
     
-    
-    
     func apiRequest(isbn: String, completion:@escaping (_ book:UnboxableBook)-> Void){
-        // Helpers
-        let sharedSession = URLSession.shared
         
-        //let apiKey = "AIzaSyD6o0FSkKrZJXVVRqfW6c0770I6PKPUl6Y"
+        let sharedSession = URLSession.shared
         
         if let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=+isbn:\(isbn)") {
             // Create Data Task
@@ -64,9 +73,6 @@ class APIWrapper{
             //Now let’s create an entity and new user records.
             let bookEntity = NSEntityDescription.entity(forEntityName: "Book", in: managedContext)!
             
-            //final, we need to add some data to our newly created record for each keys using
-            //here adding 5 data with loop
-            
             let book = NSManagedObject(entity: bookEntity, insertInto: managedContext)
             book.setValue(bookToSave.name, forKeyPath: "name")
             book.setValue(bookToSave.b_desctiption, forKey: "b_description")
@@ -88,9 +94,6 @@ class APIWrapper{
     }
     
     private func processBookData(_ data: Data) -> UnboxableBook?{
-        if let dataAsString = String(data: data, encoding: String.Encoding.utf8) {
-            //print(dataAsString)
-        }
         do {
             let bk: UnboxableGoogleBooksAPIResponse = try unbox(data: data)
             print(bk.books[0].authors[0])
@@ -100,7 +103,6 @@ class APIWrapper{
             print(bk.books[0].pages)
             
             return bk.books[0]
-            
             
         } catch {
             print("Something happened")
